@@ -1,0 +1,51 @@
+ abstract class Car
+{
+    public abstract void drive();
+    public abstract void fly();
+
+    public void playMusic()
+    {
+        System.out.println("Playing Music");
+    }
+}
+
+abstract class WagonR extends Car
+{
+    public void drive()
+    {
+        System.out.println("Driving");
+    }
+}
+
+class UpdatedWagonR extends WagonR
+{
+    public void fly()
+    {
+        System.out.println("Flying");
+    }
+}
+
+class Abstract
+{
+    public static void main(String[] args) {
+        Car obj=new UpdatedWagonR();
+        obj.drive();
+        obj.fly();
+        obj.playMusic();
+    }
+}
+
+/* 
+ * ABSTRACT METHOD CAN BE DECLARED ONLY IN THE ABSTRACT CLASS.
+ * IF THE METHODS IN THE CLASS ARE DECLARED AS ABSTRACT THEN THE CLASS SHOULD ALSO BE DECLARED AS ABSTRACT CLASS.
+ * THE OBJECT OF THE ABSTRACT CLASS CANT BE CREATED.WE CANNOT INSTANTIATE THE TYPE CAR.
+ * WE CAN CREATE THE REFERENCE OF THE ABSTRACT CLASS AND THE OBJECT OF ITS CHILD CLASS.
+ * Car obj=new UpdatedWagonR();
+ * IT IS COMPULSORY THAT TO HAVE ABSTRACT METHOD WE NEED THE ABSTRACT CLASS.
+ * BUT ABSTRACT CLASS CAN HAVE ABSTRACT METHOD AS WELL AS NON-ABSTRACT METHOD AND ALSO BOTH OF THEM AT ONCE.
+ * IF THE ABSTRACT CLASS HAVE THE ABSTRACT METHODS OFCOURSE WITH NO BODY,THEN THE CLASS THAT EXTENDS THE ABSTRACT CLASS MUST IMPLEMENT THE METHOD DECLARED IN THE ABSTRACT CLASS.OTHERWISE IT GIVES AN ERROR.
+ *IT IS COMPULSORY TO DEFINE ALL THE METHODS,AND IF THE SUB-CLASS THAT EXTENDS THE ABSTRACT CLASS FAILS TO DEFINE ALL THE ABSTRACT METHODS THEN IT  WILL ALSO BE OR IT SHOULD BE DECLARED AS ABSTRACT CLASS.
+ 
+ THE NON_ABSTRACT CLASS ARE KNOWN AS CONCRETE CLASS.
+
+ */
